@@ -2,6 +2,11 @@ nav div.collapse {
   background-color: white;
 }
 
+nav div.collapse ul.navbar-nav li.nav-item a.nav-link {
+  color: #A1BADC;
+  text-transform: uppercase;
+}
+
 @media (max-width: 767px) {
     .navbar-toggler {
       border: none;
@@ -13,21 +18,6 @@ nav div.collapse {
         padding: 10px 10px 10px 0px;
       } 
 } 
-
-/* @media ( max-width: 768px) {
-
-  nav ul {
-    justify-content: space-between;
-  }
-}
-
-@media ( max-width: 480px) {
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-} */
 
 .overlay {
   display: none;
