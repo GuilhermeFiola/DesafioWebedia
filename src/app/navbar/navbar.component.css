@@ -2,9 +2,10 @@ nav div.collapse {
   background-color: white;
 }
 
-nav div.collapse ul.navbar-nav li.nav-item a.nav-link {
+nav div.collapse ul.navbar-nav li.nav-item span.nav-link {
   color: #A1BADC;
   text-transform: uppercase;
+  cursor:pointer;
 }
 
 @media (max-width: 767px) {
