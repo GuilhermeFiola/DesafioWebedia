@@ -15,12 +15,12 @@ export class HttpService {
     })
   };
 
-  constructor (
+  constructor(
     private http: HttpClient,
-  ) {}
+  ) { }
 
   getAllNews() {
-    return this.http.get(this.allNewsEntrypoint + '?q=bitcoin&from=2018-10-04&sortBy=publishedAt', this.httpOptions);
+    return this.http.get(this.allNewsEntrypoint + '?q=bitcoin&from=2018-10-21&sortBy=publishedAt', this.httpOptions);
   }
 
   getTopNews() {
