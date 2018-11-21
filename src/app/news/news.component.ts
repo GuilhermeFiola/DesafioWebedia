@@ -1,7 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
 
-const listItens: any[] = [
+const listItens: any = {
+  articles: [
   {
     author: null,
     title: "Daily Hacker News for 2018-11-20",
@@ -54,8 +55,8 @@ const listItens: any[] = [
     urlToImage: null,
     publishedAt: "2018-11-21T00:00:00Z",
     content: "The 10 highest-rated articles on Hacker News on November 20, 2018 which have not appeared on any previous Hacker News Daily are: Hacker News Daily is sponsored by Triplebyte. Beat Triplebyte's online coding quiz. Get multiple job offers fast. Skip resumes &am… [+13 chars]"
-  }
-];
+  }]
+};
 
 @Component({
   selector: 'app-news',
@@ -64,23 +65,27 @@ const listItens: any[] = [
 })
 export class NewsComponent implements AfterViewInit {
 
-  news: any = {};
+  // news: any = {};
 
-  linkItems: any[] = listItens;
+  news: any = {};
 
   constructor(private httpService: HttpService) { }
 
   ngAfterViewInit() {
-    this.getAllNews();
+    this.getTopNews(1);
   }
 
-  getAllNews() {
-    this.httpService.getAllNews().subscribe((newsResponse) => {
+  getTopNews(pageNumber: number) {
+    this.httpService.getTopNews(pageNumber).subscribe((newsResponse) => {
       this.news = newsResponse;
       console.log(this.news);
     }, (error) => {
       console.log(error);
     });
+  }
+
+  loadPage(pageNumber: number) {
+    this.getTopNews(pageNumber);
   }
 
 }

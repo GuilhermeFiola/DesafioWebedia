@@ -2,7 +2,9 @@
   <div class="row col-md-12">
     <div *ngFor="let new of news.articles; let i = index" [ngClass]="{'col-md-4': (i > 1 && i < 5), 'col-md-6': !(i > 1 && i < 5), 'mt-4': true}">
       <div class="card h-100">
-        <img class="card-img-top" src="{{new.urlToImage}}" alt="Card image cap">
+		<div *ngIf="new.urlToImage">
+			<img class="card-img-top img-responsive" src="{{new.urlToImage}}" alt="Card image cap"/>
+		</div>
         <div class="card-body">
           <h5 class="card-title">{{new.title}}{{i}}</h5>
           <p class="card-text">{{new.description}}</p>
@@ -13,4 +15,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="mx-auto" style="width: fit-content;">
+	<ngb-pagination [collectionSize]="200" [maxSize]="3" [ellipses]="true" [rotate]="true" [directionLinks]="false" (pageChange)="loadPage($event)"></ngb-pagination>
 </div>

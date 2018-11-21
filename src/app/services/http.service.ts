@@ -19,11 +19,11 @@ export class HttpService {
     private http: HttpClient,
   ) { }
 
-  getAllNews() {
-    return this.http.get(this.allNewsEntrypoint + '?q=bitcoin&from=2018-10-21&sortBy=publishedAt', this.httpOptions);
+  getAllNews(page: number) {
+    return this.http.get(this.allNewsEntrypoint + '?country=br&pageSize=7&page=' + page, this.httpOptions);
   }
 
-  getTopNews() {
-    return this.http.get(this.topNewsEntrypoint);
+  getTopNews(page: number) {
+    return this.http.get(this.topNewsEntrypoint + '?country=br&pageSize=7&page=' + page, this.httpOptions);
   }
 }
