@@ -6,3 +6,31 @@
  .row > div[class*='col-'] {
    display: flex;
  }
+
+.justify-content-center {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+ /deep/ .pagination .page-item .page-link {
+  background-color: #FFFFFF;
+  color: #DCDCDC;
+  border: transparent;
+  border-radius: 50%;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0 10px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+/deep/ .pagination .page-item.active .page-link {
+  background-color: #7DA3D2;
+  color: #F1EFF2;
+}
+
+/deep/ .pagination .page-item.disabled {
+  display: none;
+}

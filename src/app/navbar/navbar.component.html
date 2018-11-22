@@ -17,13 +17,7 @@
     </ul>
     <ul class="nav navbar-nav float-right">
       <li class="nav-item mr-2">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-            aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">Button</button>
-          </div>
-        </div>
+        <input #searchBox type="search" class="search-focus shadow-sm" (keydown.enter)="searchNews(searchBox.value)"/>
       </li>
     </ul>
   </div>

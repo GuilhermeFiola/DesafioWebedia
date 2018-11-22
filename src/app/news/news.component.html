@@ -6,7 +6,7 @@
 			<img class="card-img-top img-responsive" src="{{new.urlToImage}}" alt="Card image cap"/>
 		</div>
         <div class="card-body">
-          <h5 class="card-title">{{new.title}}{{i}}</h5>
+          <h5 class="card-title">{{new.title}}</h5>
           <p class="card-text">{{new.description}}</p>
         </div>
         <div class="card-footer">
@@ -16,6 +16,6 @@
     </div>
   </div>
 </div>
-<div class="mx-auto" style="width: fit-content;">
-	<ngb-pagination [collectionSize]="200" [maxSize]="3" [ellipses]="true" [rotate]="true" [directionLinks]="false" (pageChange)="loadPage($event)"></ngb-pagination>
+<div class="col-md-12 justify-content-center mt-5">
+	<ngb-pagination [collectionSize]="colectionSize" [pageSize]="pageSize" [maxSize]="maxSize" [ellipses]="true" [rotate]="true" [directionLinks]="false" (pageChange)="loadPage($event)"></ngb-pagination>
 </div>

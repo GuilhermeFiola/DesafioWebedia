@@ -19,11 +19,11 @@ export class HttpService {
     private http: HttpClient,
   ) { }
 
-  getAllNews(page: number) {
-    return this.http.get(this.allNewsEntrypoint + '?country=br&pageSize=7&page=' + page, this.httpOptions);
+  getAllNews(page: number, pageSize: number) {
+    return this.http.get(this.allNewsEntrypoint + '?country=br&pageSize=' + pageSize + '&page=' + page, this.httpOptions);
   }
 
-  getTopNews(page: number) {
-    return this.http.get(this.topNewsEntrypoint + '?country=br&pageSize=7&page=' + page, this.httpOptions);
+  getTopNews(page: number, pageSize: number) {
+    return this.http.get(this.topNewsEntrypoint + '?country=br&pageSize=' + pageSize + '&page=' + page, this.httpOptions);
   }
 }

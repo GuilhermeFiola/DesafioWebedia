@@ -65,9 +65,10 @@ const listItens: any = {
 })
 export class NewsComponent implements AfterViewInit {
 
-  // news: any = {};
-
   news: any = {};
+  colectionSize: number = 0;
+  pageSize: number = 2;
+  maxSize: number = 4;
 
   constructor(private httpService: HttpService) { }
 
@@ -76,9 +77,11 @@ export class NewsComponent implements AfterViewInit {
   }
 
   getTopNews(pageNumber: number) {
-    this.httpService.getTopNews(pageNumber).subscribe((newsResponse) => {
-      this.news = newsResponse;
+    this.httpService.getTopNews(pageNumber, this.pageSize).subscribe((newsResponse) => {
+      this.news = <any>newsResponse;
+      this.colectionSize = newsResponse.totalResults !== NaN ? newsResponse.totalResults : 0;
       console.log(this.news);
+      console.log(this.colectionSize);
     }, (error) => {
       console.log(error);
     });
@@ -86,6 +89,12 @@ export class NewsComponent implements AfterViewInit {
 
   loadPage(pageNumber: number) {
     this.getTopNews(pageNumber);
+
+    if (pageNumber >= 4 && pageNumber <= (this.colectionSize / this.pageSize) - 2) {
+      this.maxSize = 3;
+    } else {
+      this.maxSize = 4;
+    }
   }
 
 }

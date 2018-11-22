@@ -12,14 +12,18 @@ export class NavbarComponent {
   constructor(private renderer: Renderer2,
               private el: ElementRef) { }
 
-  navbarToggler(){
+  navbarToggler() {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
 
     const element = this.renderer.selectRootElement('.overlay');
-    if(!this.isNavbarCollapsed){
+    if (!this.isNavbarCollapsed) {
       this.renderer.addClass(element, 'active');
-    }else{
+    } else {
       this.renderer.removeClass(element, 'active');
     }
+  }
+
+  searchNews(searchTerm: string) {
+    console.log(searchTerm);
   }
 }
