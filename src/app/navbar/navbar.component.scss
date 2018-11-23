@@ -18,6 +18,19 @@ nav div.collapse ul.navbar-nav li.nav-item span.nav-link {
   transition: all .5s;
 }
 
+.icon{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  color: black;
+  cursor: pointer;
+  transform: translateX(-30px);
+}
+
 @media (max-width: 767px) {
     .navbar-toggler {
       border: none;

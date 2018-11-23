@@ -1,16 +1,19 @@
-import { Component, Renderer2, ElementRef } from '@angular/core';
+import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
   isNavbarCollapsed: boolean = true;
 
-  constructor(private renderer: Renderer2,
-              private el: ElementRef) { }
+  constructor(private renderer: Renderer2, private el: ElementRef) { }
+
+  ngOnInit() {
+    this.renderer.selectRootElement('.search-focus').focus();
+  }
 
   navbarToggler() {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;

@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NewsComponent } from './news/news.component';
 import { HttpService } from './services/http.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpService } from './services/http.service';
     BrowserModule,
     HttpClientModule,
     NgbModule.forRoot(),
+    AngularFontAwesomeModule,
   ],
   providers: [
     HttpService,

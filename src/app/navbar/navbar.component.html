@@ -1,44 +1,49 @@
-<nav class="mainNav navbar navbar-expand-md navbar-light flex-column">
-  <div class="container mw-100 d-flex">
-    <ul class="nav navbar-nav float-left">
-      <li class="nav-item float-left">
-        <button class="navbar-toggler navbar-toggler-left" type="button" (click)="navbarToggler()" aria-controls="exCollapsingNavbar2"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-logo mx-auto">
-      <li class="nav-item">
-        <a class="navbar-brand mx-md-auto" href="#">
-          <img src="assets/webedia-logo.png" alt="Webedia" height="40px" width="180px">
-        </a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav float-right">
-      <li class="nav-item mr-2">
-        <input #searchBox type="search" class="search-focus shadow-sm" (keydown.enter)="searchNews(searchBox.value)"/>
-      </li>
-    </ul>
-  </div>
-  <div [ngbCollapse]="isNavbarCollapsed" class="mt-2 col-md-12 collapse navbar-collapse shadow-sm bg-white">
-    <ul class="navbar-nav text-center mx-auto">
-      <li class="nav-item mr-4">
-        <span class="nav-link">Notícias em Destaque</span>
-      </li>
-      <li class="nav-item mr-4">
-        <span class="nav-link">Notícias do Brasil</span>
-      </li>
-      <li class="nav-item mr-4">
-        <span class="nav-link">Notícias dos EUA</span>
-      </li>
-      <li class="nav-item mr-4">
-        <span class="nav-link">Notícias da Argentina</span>
-      </li>
-      <li class="nav-item mr-4">
-        <span class="nav-link">Notícias da França</span>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div class="container">
+  <nav class="mainNav navbar navbar-expand-md navbar-light flex-column">
+    <div class="container mw-100 d-flex">
+      <ul class="nav navbar-nav float-left">
+        <li class="nav-item float-left">
+          <button class="navbar-toggler navbar-toggler-left" type="button" (click)="navbarToggler()" aria-controls="exCollapsingNavbar2"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-logo mx-auto">
+        <li class="nav-item">
+          <a class="navbar-brand mx-md-auto" href="#">
+            <img src="assets/webedia-logo.png" alt="Webedia" height="50px" width="250px">
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav float-right">
+        <li class="nav-item mr-2">
+          <input #searchBox type="search" class="search-focus shadow-sm" (keydown.enter)="searchNews(searchBox.value)" />
+          <div class="icon">
+            <span><i class="fa fa-search"></i></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div [ngbCollapse]="isNavbarCollapsed" class="mt-2 col-md-12 collapse navbar-collapse shadow-sm bg-white">
+      <ul class="navbar-nav text-center mx-auto">
+        <li class="nav-item mr-4">
+          <span class="nav-link">Notícias em Destaque</span>
+        </li>
+        <li class="nav-item mr-4">
+          <span class="nav-link">Notícias do Brasil</span>
+        </li>
+        <li class="nav-item mr-4">
+          <span class="nav-link">Notícias dos EUA</span>
+        </li>
+        <li class="nav-item mr-4">
+          <span class="nav-link">Notícias da Argentina</span>
+        </li>
+        <li class="nav-item mr-4">
+          <span class="nav-link">Notícias da França</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 <div class="overlay"></div>
